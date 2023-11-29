@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.claseImg {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.table-responsive {
+  max-height:45vh;
+  width: 20vw;
+  border-radius: 10px !important;
+}
+
+.HitDice{
+  max-width: 10vw !important;
+}
