@@ -82,7 +82,7 @@ function claseSeleccionada() {
     claseExplicacion.innerHTML = "";
     clase = document.querySelector('input[name="Clases"]:checked').value;;
     var json = JSON.parse(Get(`https://www.dnd5eapi.co/api/classes/${clase}`));
-    imgPersonajeClase.src = `/src/img/Clases/${clase}.jpeg`;
+    imgPersonajeClase.src = `src/img/Clases/${clase}.jpeg`;
 
 
     //Mostrar Carta HitDice
@@ -91,7 +91,7 @@ function claseSeleccionada() {
     hitdice.classList.add("HitDice");
     let imgHitDice = document.createElement("img");
     imgHitDice.classList.add("card-img-top");
-    imgHitDice.src = `/src/img/Dados/${json.hit_die}.png`;
+    imgHitDice.src = `src/img/Dados/${json.hit_die}.png`;
     hitdice.appendChild(imgHitDice);
     let bodyHitdice = document.createElement("div");
     hitdice.classList.add("card-body");
@@ -102,13 +102,10 @@ function claseSeleccionada() {
     bodyHitdice.appendChild(titHitdice);
     hitdice.appendChild(bodyHitdice);
     claseExplicacion.appendChild(hitdice);
-    
-    console.log(JSON.parse(Get(`${APIurl}/api/classes/${clase}/levels/1`)));
 
     claseExplicacion.appendChild(crearTablaProEq(json.proficiencies, 0, "Proficencies"));
     claseExplicacion.appendChild(crearTablaProEq(JSON.parse(Get(`${APIurl}/api/classes/${clase}/levels/1`)).features, 2, "Features"));
     popOverCall();
-    console.log(json);
 }
 
 /*
@@ -221,7 +218,6 @@ function razaSeleccionada() {
 
     razaExplicacion.appendChild(crearTablaProEq(json.traits, 1, "Traits"));
     popOverCall();
-    console.log(json);
 }
 //Bootstrap popover
 function popOverCall(){
