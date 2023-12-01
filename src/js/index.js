@@ -82,7 +82,7 @@ function claseSeleccionada() {
     claseExplicacion.innerHTML = "";
     clase = document.querySelector('input[name="Clases"]:checked').value;;
     var json = JSON.parse(Get(`https://www.dnd5eapi.co/api/classes/${clase}`));
-    imgPersonajeClase.src = `src/img/Clases/${clase}.jpeg`;
+    imgPersonajeClase.src=`./src/img/Clases/${clase}.jpeg`;
 
 
     //Mostrar Carta HitDice
@@ -189,7 +189,7 @@ function razaSeleccionada() {
     razaExplicacion.innerHTML = "";
     raza = document.querySelector('input[name="Razas"]:checked').value;;
     var json = JSON.parse(Get(`https://www.dnd5eapi.co/api/races/${raza}`));
-    imgPersonaje.src = `/src/img/Razas/${raza}.png`;
+    imgPersonaje.src = `./src/img/Razas/${raza}.png`;
 
     //Base carta
     let movimiento = document.createElement("div");
