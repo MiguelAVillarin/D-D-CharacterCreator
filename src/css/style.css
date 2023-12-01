@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.titulo{
+.titulo {
   width: 15vw;
 }
 
@@ -14,22 +14,45 @@
 }
 
 .table-responsive {
-  max-height:45vh;
+  max-height: 45vh;
   width: 20vw;
   border-radius: 10px !important;
 }
 
-.HitDice{
+.HitDice {
   max-width: 10vw !important;
 }
 
-.datosRaza{
-  max-width: 30vw !important;
+.datosRaza {
+  max-width: 25vw !important;
 }
 
-.exp{
+.exp {
   text-decoration: none;
   border: 0;
   background-color: rgba(240, 248, 255, 0);
   color: white;
+}
+
+body {
+  background-image: url("../img/Fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: 20px;
+  scrollbar-color: rgb(163, 163, 163) rgba(255, 255, 255, 0);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(163, 163, 163);
+  border-radius: 20px;
+  border: 3px solid var(--color-fondo);
 }

@@ -34,7 +34,7 @@ function radioClases() {
         radio.autocomplete = "off";
         let label = document.createElement("label");
         label.classList.add("btn");
-        label.classList.add("btn-outline-success");
+        label.classList.add("btn-outline-primary");
         label.htmlFor = `Clase${index + 1}`;
         label.innerText = json.results[index].name;
 
@@ -89,6 +89,9 @@ function claseSeleccionada() {
     let hitdice = document.createElement("div");
     hitdice.classList.add("card");
     hitdice.classList.add("HitDice");
+    hitdice.classList.add("bg-info");
+    hitdice.classList.add("h-100");
+    hitdice.classList.add("text-white");
     let imgHitDice = document.createElement("img");
     imgHitDice.classList.add("card-img-top");
     imgHitDice.src = `src/img/Dados/${json.hit_die}.png`;
@@ -173,7 +176,7 @@ function crearTablaProEq(array, valorFun, titulo) {
         if(valorFun==1 || valorFun==2){
             jsonDescripcion=JSON.parse(Get(`${jsonURL}${element.index}`));
             let desc=jsonDescripcion.desc;
-            arma.innerHTML=`<a href="#" class="exp" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="${desc}">${arma.innerText}</a>`;    
+            arma.innerHTML=`<a href="#1" class="exp" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-content="${desc}">${arma.innerText}</a>`;    
         }
         
         fila.appendChild(arma);
@@ -194,12 +197,21 @@ function razaSeleccionada() {
     //Base carta
     let movimiento = document.createElement("div");
     movimiento.classList.add("card");
+    movimiento.classList.add("bg-info");
+    movimiento.classList.add("text-white");
     movimiento.classList.add("datosRaza");
+    movimiento.classList.add("h-100");
     let bodyMov = document.createElement("div");
     movimiento.classList.add("card-body");
+    //Información extra
+    let textoTitulo = document.createElement("h5");
+    textoTitulo.classList.add("card-title");
+    textoTitulo.classList.add("text-center");
+    textoTitulo.innerText = `About ${raza}`;
+    bodyMov.appendChild(textoTitulo);
     //Movimiento
-    let textoMovimiento = document.createElement("h5");
-    textoMovimiento.classList.add("card-title");
+    let textoMovimiento = document.createElement("p");
+    textoMovimiento.classList.add("card-text");
     textoMovimiento.classList.add("text-center");
     textoMovimiento.innerText = `${json.speed} Movement Speed`;
     bodyMov.appendChild(textoMovimiento);
