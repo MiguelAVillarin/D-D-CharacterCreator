@@ -1,79 +1,40 @@
 <!DOCTYPE html>
-<html lang=es>
+<html lang="en">
 
 <head>
-  <meta charset=UTF-8>
-  <meta name=viewport content=width=device-width, initial-scale=1.0>
-  <script src=./src/js/index.js defer></script>
-  <link rel=stylesheet href=./src/css/style.css>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>D&D CharacterCreation</title>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>D&D CharacterCreation</title>
+    <link rel=stylesheet href="src/css/style.css">
+    <script src="src/js/index.js" type="module"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body class="m-2">
-  <div class="text-center">
-    <img src="src/img/Titulo.png" class="titulo">
-  </div>
-  <div class="d-flex gap-4 justify-content-evenly mt-2 flex-md-wrap flex-sm-wrap ">
-    <div class="d-flex flex-column ">
-      <div class="options shadow p-3 mb-5 bg-body-tertiary rounded border border-light-subtle border-3 bg-light p-3">
-        <h4>Select Race</h4>
-        <div class="btn-group" role="group" id="razaRadio" aria-label="Basic radio toggle button group">
-        </div>
-        <div id="expRaza" class="d-flex gap-3 mt-4">
-          <div class="d-flex flex-column">
-            <p>Waiting for a race to be selected</p>
-            <div class="spinner-border text-info" role="status">
-              <span class="visually-hidden">Waiting</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="options mt-3 shadow p-3 mb-5 bg-body-tertiary rounded border border-light-subtle border-3 bg-light p-3">
-        <h4>Select Class</h4>
-        <div class="btn-group" role="group" id="clasesRadio" aria-label="Basic radio toggle button group">
-        </div>
-        <div id="expClase" class="d-flex gap-3 mt-4">
-          <div class="d-flex flex-column">
-            <p>Waiting for a class to be selected</p>
-            <div class="spinner-border text-info" role="status">
-              <span class="visually-hidden">Waiting</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row col-12 gap-3 mt-5 mb-5">
-        <button type="button" class="btn btn-warning col-2"><i class="bi bi-trash3"></i> Discard</button>
-        <button type="button" class="btn btn-success col-2 disabled"><i class="bi bi-floppy-fill"></i> Save</button>
-      </div>
+    <div class="text-center">
+        <img src="src/img/Titulo.png" class="titulo">
     </div>
 
-    <div>
-      <div class="card shadow p-3 mb-5 bg-body-tertiary rounded border border-light-subtle border-3 " style="width: 18rem;" id="cartaPersonaje">
-        <img class="card-img-top" src="src/img//Razas/unknown.png" id="imgPersonaje">
-        <img class="card-img-overlay claseImg" src="src/img/Clases/unknown.jpeg" id="imgPersonajeClase">
-        <div class="card-body">
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control border border-primary border-3" id="nombrePersonaje">
-            <label for="nombrePersonaje">Name</label>
-          </div>
+    <div class="d-flex gap-4 justify-content-center mt-2 flex-md-wrap flex-sm-wrap ">
+        <div
+            class="options shadow p-3 mb-5 bg-body-tertiary rounded border border-light-subtle border-3 bg-light p-3 w-100 ms-5 me-5">
+            <div class="row d-flex justify-content-around align-items-center">
+                <h4 class="col-2">Characters created</h4>
+                <a type="button" class="btn btn-success col-2" href="src/html/characterCreation.html"><i
+                        class="bi bi-floppy-fill"></i> Create</a>
+            </div>
+            <div class="mt-2 d-flex justify-content-around flex-wrap" id="personajes">
+                <div class="m-5 d-flex justify-content-center align-content-center flex-column text-center">
+                    <p>There is no characters created</p>
+                    <p>Start with creating one</p>
+                </div>
+            </div>
+
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <p>Alignment:</p>
-            <select class="form-select form-select-sm border border-primary border-3" aria-label="Small select example" id="alignmentsSelect">
-            </select>
-          </li>
-          <li class="list-group-item" id="edadText">Age: ?</li>
-          <li class="list-group-item" id="sizeText">Size: ?</li>
-        </ul>
-      </div>
     </div>
-  </div>
-
-
 </body>
 
 </html>

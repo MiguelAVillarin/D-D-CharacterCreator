@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.contenedorSelect{
+  height: 100px !important;
+}
+
 .titulo {
   width: 15vw;
 }
@@ -55,4 +59,15 @@ body {
   background-color: rgb(163, 163, 163);
   border-radius: 20px;
   border: 3px solid var(--color-fondo);
+}
+
+.menuOpcion{
+  height: 10vh;
+  width: 50vw;
+}
+
+.imgOpcion{
+  object-fit: contain !important;
+  width: auto;
+  height: 9vh;
 }
