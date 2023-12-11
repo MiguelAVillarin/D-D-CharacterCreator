@@ -3,7 +3,6 @@ let razaRadio = document.getElementById("razaRadio");
 let alignmentsSelect = document.getElementById("alignmentsSelect");
 let claseExplicacion = document.getElementById("expClase");
 let razaExplicacion = document.getElementById("expRaza");
-let cartaPersonaje = document.getElementById("cartaPersonaje");
 let imgPersonaje = document.getElementById("imgPersonaje");
 let imgPersonajeClase = document.getElementById("imgPersonajeClase");
 let saveButton = document.getElementById("saveButton");
@@ -18,8 +17,6 @@ let clase = "";
 let raza = "";
 let personajeCreado;
 
-razaRadio.addEventListener("change", isCompleted);
-clasesRadio.addEventListener("change", isCompleted);
 nombreInput.addEventListener("focusout", isCompleted);
 alignmentsSelect.addEventListener("change", isCompleted);
 saveButton.addEventListener("click", guardarBD);
@@ -101,8 +98,8 @@ async function selectAlignment() {
 
         alignmentsSelect.appendChild(option);
     }
-    if(personajeCreado!=null){
-        alignmentsSelect.value=personajeCreado.alignment;
+    if (personajeCreado != null) {
+        alignmentsSelect.value = personajeCreado.alignment;
     }
 }
 
@@ -111,7 +108,7 @@ async function claseSeleccionada() {
     clase = document.querySelector('input[name="Clases"]:checked').value;
     var json = await Get(`https://www.dnd5eapi.co/api/classes/${clase}`);
     imgPersonajeClase.src = `../img/Clases/${clase}.jpeg`;
-
+    isCompleted();
 
     //Mostrar Carta HitDice
     let hitdice = document.createElement("div");
@@ -226,6 +223,7 @@ async function razaSeleccionada() {
     raza = document.querySelector('input[name="Razas"]:checked').value;;
     var json = await Get(`https://www.dnd5eapi.co/api/races/${raza}`);
     imgPersonaje.src = `../img/Razas/${raza}.png`;
+    isCompleted();
 
     //Base carta
     let movimiento = document.createElement("div");
@@ -275,6 +273,8 @@ function popOverCall() {
 function isCompleted() {
     if (clase != "" && raza != "" && nombreInput.value != "") {
         saveButton.classList.remove("disabled");
+    } else {
+        saveButton.classList.add("disabled");
     }
 }
 
@@ -291,9 +291,9 @@ function guardarBD() {
     personaje.clase = clase;
     personaje.nombre = nombreInput.value;
     personaje.raza = raza;
-    if(personajeCreado!=null){
-        personaje.id =personajeCreado.id;
-    }else{
+    if (personajeCreado != null) {
+        personaje.id = personajeCreado.id;
+    } else {
         personaje.id = createID();
     }
 
