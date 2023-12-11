@@ -71,3 +71,7 @@ body {
   width: auto;
   height: 9vh;
 }
+
+.filtro{
+  filter: brightness(0%);
+}
